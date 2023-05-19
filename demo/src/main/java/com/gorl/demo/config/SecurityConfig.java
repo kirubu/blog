@@ -48,9 +48,9 @@ public class SecurityConfig {
 			.authorizeHttpRequests((authorize) -> 
 			//authorize.anyRequest().authenticated()
 			authorize.requestMatchers(HttpMethod.GET, "/api/**").permitAll()
-			.requestMatchers(HttpMethod.POST,"/api/auth/**").permitAll()
+			.requestMatchers("/api/auth/**").permitAll()
 			.anyRequest().authenticated()
-					).httpBasic();
+					);
 		
 		return httpSecurity.build();
 	}

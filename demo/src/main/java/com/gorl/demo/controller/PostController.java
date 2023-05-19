@@ -30,7 +30,7 @@ public class PostController {
 	@Autowired
 	private PostService postService;
 	
-	@PreAuthorize("hasRole('admin')")
+	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/create")
 	public ResponseEntity<PostDTO> createPost(@Valid @RequestBody PostDTO dto)
 	{
@@ -81,7 +81,7 @@ public class PostController {
 		
 	}
 	
-	@PreAuthorize("hasRole('admin')")
+	@PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("/all/{id}")
 	public ResponseEntity<PostDTO> updatePostById(@PathVariable long id, @Valid @RequestBody PostDTO dto)
 	{
@@ -92,7 +92,7 @@ public class PostController {
 		
 	}
 	
-	@PreAuthorize("hasRole('admin')")
+	@PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("/all/{id}")
 	public ResponseEntity<String> deletepost(@PathVariable long id)
 	{

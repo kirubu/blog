@@ -27,7 +27,7 @@ public class CommentController {
 	@Autowired
 	private CommentService commentService;
 	
-	@PreAuthorize("hasRole('admin')")
+	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("create/{postId}/comments")
 	public ResponseEntity<CommentDTO> createComment(@PathVariable long postId, @RequestBody CommentDTO cmtDto)
 	{
@@ -59,7 +59,7 @@ public class CommentController {
 		return response;
 	}
 	
-	@PreAuthorize("hasRole('admin')")
+	@PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("create/{postId}/comments/{cmtId}")
 	public ResponseEntity<CommentDTO> updateComment(@PathVariable long postId, @PathVariable long cmtId, @RequestBody CommentDTO cmtDto)
 	{
@@ -70,7 +70,7 @@ public class CommentController {
 		return response;
 	}
 	
-	@PreAuthorize("hasRole('admin')")
+	@PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("create/{postId}/comments/{cmtId}")
 	public ResponseEntity<String> deleteComment(@PathVariable long postId, @PathVariable long cmtId)
 	{
